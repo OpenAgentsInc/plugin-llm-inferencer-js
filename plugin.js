@@ -14,11 +14,6 @@ function callOpenAI() {
     
     const apiKey = input.apiKey;
     const hostUrl = input.hostUrl;
-
-    // Try returning hostUrl
-    Host.outputString(`hostUrl: ${hostUrl}`);
-    return
-
     const modelName = input.model; // Accept model name as input
     const messages = input.messages;
 
@@ -31,6 +26,9 @@ function callOpenAI() {
         model: modelName, // Use the passed model name
         messages: messages
     });
+    // try logging the body
+    Host.outputString(body);
+    return
 
     const request = {
         method: "POST",
