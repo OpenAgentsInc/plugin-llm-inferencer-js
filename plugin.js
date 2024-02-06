@@ -1,5 +1,10 @@
 function callOpenAI() {
     const inputJson = Host.inputString();
+
+    // Just return the input as output
+    Host.outputString(inputJson);
+    return
+
     const input = JSON.parse(inputJson);
     
     const apiKey = input.apiKey;
