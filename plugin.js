@@ -11,9 +11,6 @@ function callOpenAI() {
     // Then parse the unescaped JSON string
     const input = JSON.parse(unescapedInputJson);
     // Just return the input as output
-    Host.outputString("yeah i parsed something");
-    return
-
     
     const apiKey = input.apiKey;
     const hostUrl = input.hostUrl;
