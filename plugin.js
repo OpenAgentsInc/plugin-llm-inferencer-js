@@ -1,7 +1,15 @@
 function callOpenAI() {
-    const inputJson = Host.inputString();
-    const input = JSON.parse(inputJson);
+    // const inputJson = Host.inputString();
+    // const input = JSON.parse(inputJson);
+    // Assuming inputJson has escaped characters
+    const escapedInputJson = Host.inputString();
+    
+    // Attempt to unescape the input JSON string
+    // Replace backslashes added by addslashes
+    const unescapedInputJson = escapedInputJson.replace(/\\'/g, "'").replace(/\\"/g, '"').replace(/\\\\/g, '\\').replace(/\\n/g, '\n').replace(/\\r/g, '\r').replace(/\\t/g, '\t');
 
+    // Then parse the unescaped JSON string
+    const input = JSON.parse(unescapedInputJson);
     // Just return the input as output
     Host.outputString("yeah i parsed something");
     return
