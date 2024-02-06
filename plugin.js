@@ -1,11 +1,11 @@
 function callOpenAI() {
     const inputJson = Host.inputString();
+    const input = JSON.parse(inputJson);
 
     // Just return the input as output
-    Host.outputString(inputJson);
+    Host.outputString("yeah i parsed something");
     return
 
-    const input = JSON.parse(inputJson);
     
     const apiKey = input.apiKey;
     const hostUrl = input.hostUrl;
