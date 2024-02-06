@@ -27,20 +27,29 @@ function callOpenAI() {
         messages: messages
     });
 
-    const request = {
-        method: "POST",
-        url: `${hostUrl}/v1/chat/completions`,
-        headers: headers,
-        body: body
-    };
+      const request = {
+    method: "GET",
+    url: "https://jsonplaceholder.typicode.com/todos/1"
+  }
+  const response = Http.request(request)
+  if (response.status != 200) throw new Error(`Got non 200 response ${response.status}`)
+  Host.outputString(response.body)
+    return
 
-    const response = Http.request(request);
-    if (response.status != 200) {
-        Host.outputString(`Received non-200 response: ${response.status}`);
-        return
-    }
+    // const request = {
+    //     method: "POST",
+    //     url: `${hostUrl}/v1/chat/completions`,
+    //     headers: headers,
+    //     body: body
+    // };
 
-    Host.outputString(response.body);
+    // const response = Http.request(request);
+    // if (response.status != 200) {
+    //     Host.outputString(`Received non-200 response: ${response.status}`);
+    //     return
+    // }
+
+    // Host.outputString(response.body);
 }
 
 module.exports = { callOpenAI };
