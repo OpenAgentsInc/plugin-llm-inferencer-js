@@ -23,11 +23,12 @@ function callOpenAI() {
         })
     });
 
+    Host.outputString(requestData);
     // Call the httpFetch host function directly with the serialized request data
-    const responseJson = httpFetch(requestData);
+    /// const responseJson = httpFetch(requestData);
 
     // Output the response JSON string directly, assuming httpFetch handles the request and returns the response
-    Host.outputString(responseJson);
+    // Host.outputString(responseJson);
 }
 
 module.exports = { callOpenAI };
