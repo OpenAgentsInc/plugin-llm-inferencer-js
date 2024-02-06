@@ -26,9 +26,6 @@ function callOpenAI() {
         model: modelName, // Use the passed model name
         messages: messages
     });
-    // try logging the body
-    Host.outputString(body);
-    return
 
     const request = {
         method: "POST",
