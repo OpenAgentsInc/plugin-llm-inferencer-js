@@ -26,7 +26,8 @@ function callOpenAI() {
 
     const response = Http.request(request);
     if (response.status != 200) {
-        throw new Error(`Received non-200 response: ${response.status}`);
+        Host.outputString(`Received non-200 response: ${response.status}`);
+        return
     }
 
     Host.outputString(response.body);
