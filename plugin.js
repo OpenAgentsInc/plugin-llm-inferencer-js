@@ -14,6 +14,11 @@ function callOpenAI() {
     
     const apiKey = input.apiKey;
     const hostUrl = input.hostUrl;
+
+    // Try returning hostUrl
+    Host.outputString(`hostUrl: ${hostUrl}`);
+    return
+
     const modelName = input.model; // Accept model name as input
     const messages = input.messages;
 
